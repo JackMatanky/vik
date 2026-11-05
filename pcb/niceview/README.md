@@ -8,9 +8,9 @@ This is a VIK module made to add a VIK connector to the [nice!view](https://nice
 
 For PCB fabrication, you can use the files in the production folder.
 
-* gerbers.zip - the file used to fabricate the pcb
-* bom.csv - used for PCBA. You can also use the part numbers in this file to look up the exact parts as [lcsc.com](https://lcsc.com)
-* positions.csv - used for PCBA
+- gerbers.zip - the file used to fabricate the pcb
+- bom.csv - used for PCBA. You can also use the part numbers in this file to look up the exact parts as [lcsc.com](https://lcsc.com)
+- positions.csv - used for PCBA
 
 Using the 3 files above, this has been tested at [jlcpcb.com](https://jlcpcb.com)
 
@@ -18,17 +18,17 @@ Using the 3 files above, this has been tested at [jlcpcb.com](https://jlcpcb.com
 
 | Category                | Classification          | Response           |
 | ----------------------- | ----------------------- | ------------------ |
-| FPC connector           | Required                | :heavy_check_mark: |
-| Breakout pins           | Recommended             | :x:                |
-| Uses: SPI               | Optional                | :heavy_check_mark: |
-| SPI used for SPI only   | Strongly recommended    | :heavy_check_mark: |
-| Uses: I2C               | Optional                | :x:                |
-| I2C used for I2C only   | Strongly Recommended    | :x:                |
-| I2C pull ups            | Required                | :x:                |
-| Uses: RGB               | Optional                | :x:                |
-| Uses: Extra GPIO 1      | Optional                | :x:                |
-| Uses: Extra GPIO 2      | Optional                | :x:                |
-| Standard PCB Size/Mount | Strongly recommended    | :x:                |
+| FPC connector           | Required                | ✅                 |
+| Breakout pins           | Recommended             | ❌                 |
+| Uses: SPI               | Optional                | ✅                 |
+| SPI used for SPI only   | Strongly recommended    | ✅                 |
+| Uses: I2C               | Optional                | ❌                 |
+| I2C used for I2C only   | Strongly Recommended    | ❌                 |
+| I2C pull ups            | Required                | ❌                 |
+| Uses: RGB               | Optional                | ❌                 |
+| Uses: Extra GPIO 1      | Optional                | ❌                 |
+| Uses: Extra GPIO 2      | Optional                | ❌                 |
+| Standard PCB Size/Mount | Strongly recommended    | ❌                 |
 
 ## PCB images
 
@@ -43,4 +43,3 @@ Using the 3 files above, this has been tested at [jlcpcb.com](https://jlcpcb.com
 ![pcb front](vertical-fpc/images/niceview-module-front.png)
 
 ![pcb back](vertical-fpc/images/niceview-module-back.png)
-

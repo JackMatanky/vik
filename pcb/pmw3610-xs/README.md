@@ -11,11 +11,11 @@ The most common use in the keyboard community is for trackballs.
 Note that while I2C, RGB, and extra GPIO are broken out, but are not used in the circuitry, so they are not needed for the sensor. There are also footprints for I2C pull up resistors, which are also not needed, as I2C is not used.
 
 There is a jumper for NRESET, with an option to:  
-* Route to 3.3V, which means that it's inactive
-* Route to the VIK GPIO 1, which allows you to control the state with the connected controller
+
+- Route to 3.3V, which means that it's inactive
+- Route to the VIK GPIO 1, which allows you to control the state with the connected controller
 
 You do not need to solder the jumper at all, since there is a weak pull up resistor in the PMW3610, but if you have any trouble with the state, and want to explicitly attach to 3.3V, you can.
-
 
 ## IMPORTANT
 
@@ -31,27 +31,26 @@ The LDO seems to be frequently out of stock at JLCPCB. The part number specified
 
 For PCB fabrication, you can use the files in the production folder.
 
-* gerbers.zip - the file used to fabricate the pcb
-* bom.csv - used for PCBA. You can also use the part numbers in this file to look up the exact parts as [lcsc.com](https://lcsc.com)
-* positions.csv - used for PCBA
+- gerbers.zip - the file used to fabricate the pcb
+- bom.csv - used for PCBA. You can also use the part numbers in this file to look up the exact parts as [lcsc.com](https://lcsc.com)
+- positions.csv - used for PCBA
 
 Using the 3 files above, this has been tested at [jlcpcb.com](https://jlcpcb.com)
-
 
 ## VIK module certification
 
 | Category                | Classification          | Response           |
 | ----------------------- | ----------------------- | ------------------ |
-| FPC connector           | Required                | :heavy_check_mark: |
-| Breakout pins           | Recommended             | :heavy_check_mark: |
-| Uses: SPI               | Optional                | :heavy_check_mark: |
-| SPI used for SPI only   | Strongly recommended    | :x:                |
-| Uses: I2C               | Optional                | :x:                |
-| I2C used for I2C only   | Strongly Recommended    | :x:                |
+| FPC connector           | Required                | ✅                 |
+| Breakout pins           | Recommended             | ✅                 |
+| Uses: SPI               | Optional                | ✅                 |
+| SPI used for SPI only   | Strongly recommended    | ❌                 |
+| Uses: I2C               | Optional                | ❌                 |
+| I2C used for I2C only   | Strongly Recommended    | ❌                 |
 | I2C pull ups            | Required                | N/A                |
-| Uses: RGB               | Optional                | :x:                |
-| Uses: Extra GPIO 1      | Optional                | :x:                |
-| Uses: Extra GPIO 2      | Optional                | :x:                |
+| Uses: RGB               | Optional                | ❌                 |
+| Uses: Extra GPIO 1      | Optional                | ❌                 |
+| Uses: Extra GPIO 2      | Optional                | ❌                 |
 | Standard PCB Size/Mount | Strongly recommended    | Small              |
 
 ## PCB images

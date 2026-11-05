@@ -10,19 +10,18 @@ You wire 1 through hole from the bottom to one from the top, which connects a 3r
 
 For PCB fabrication, you can use the files in the production folder.
 
-* gerbers.zip - the file used to fabricate the pcb
-* bom.csv - used for PCBA. You can also use the part numbers in this file to look up the exact parts as [lcsc.com](https://lcsc.com)
-* positions.csv - used for PCBA
+- gerbers.zip - the file used to fabricate the pcb
+- bom.csv - used for PCBA. You can also use the part numbers in this file to look up the exact parts as [lcsc.com](https://lcsc.com)
+- positions.csv - used for PCBA
 
 Using the 3 files above, this has been tested at [jlcpcb.com](https://jlcpcb.com)
-
 
 ## VIK module certification
 
 | Category                | Classification          | Response           |
 | ----------------------- | ----------------------- | ------------------ |
-| FPC connector           | Required                | :heavy_check_mark: |
-| Breakout pins           | Recommended             | :heavy_check_mark: |
+| FPC connector           | Required                | ✅                 |
+| Breakout pins           | Recommended             | ✅                 |
 | Uses: SPI               | Optional                | N/A                |
 | SPI used for SPI only   | Strongly recommended    | N/A                |
 | Uses: I2C               | Optional                | N/A                |
@@ -31,7 +30,7 @@ Using the 3 files above, this has been tested at [jlcpcb.com](https://jlcpcb.com
 | Uses: RGB               | Optional                | N/A                |
 | Uses: Extra GPIO 1      | Optional                | N/A                |
 | Uses: Extra GPIO 2      | Optional                | N/A                |
-| Standard PCB Size/Mount | Strongly recommended    | :x:                |
+| Standard PCB Size/Mount | Strongly recommended    | ❌                 |
 
 ## PCB images
 

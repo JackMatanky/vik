@@ -12,50 +12,49 @@ I have put together [display housings and covers](https://github.com/sadekbaroud
 
 For PCB fabrication, you can use the files in the production folder.
 
-* gerbers.zip - the file used to fabricate the pcb
-* bom.csv - used for PCBA. You can also use the part numbers in this file to look up the exact parts as [lcsc.com](https://lcsc.com)
-* positions.csv - used for PCBA
+- gerbers.zip - the file used to fabricate the pcb
+- bom.csv - used for PCBA. You can also use the part numbers in this file to look up the exact parts as [lcsc.com](https://lcsc.com)
+- positions.csv - used for PCBA
 
 Using the 3 files above, this has been tested at [jlcpcb.com](https://jlcpcb.com)
 
-# Display module dimensions
+## Display module dimensions
 
 Look inside the `./images/` directory for dimensions for the various modules that this has been tested to work with. These images were all pulled from [lcdwiki.org](http://www.lcdwiki.com/Main_Page)
 
-
-## VIK module certification
+### VIK module certification
 
 | Category                | Classification          | Response           |
 | ----------------------- | ----------------------- | ------------------ |
-| FPC connector           | Required                | :heavy_check_mark: |
-| Breakout pins           | Recommended             | :x:                |
-| Uses: SPI               | Optional                | :heavy_check_mark: |
-| SPI used for SPI only   | Strongly recommended    | :heavy_check_mark: |
-| Uses: I2C               | Optional                | :heavy_check_mark: |
-| I2C used for I2C only   | Strongly Recommended    | :heavy_check_mark: |
-| I2C pull ups            | Required                | :x:                |
-| Uses: RGB               | Optional                | :x:                |
-| Uses: Extra GPIO 1      | Optional                | :heavy_check_mark: |
-| Uses: Extra GPIO 2      | Optional                | :heavy_check_mark: |
-| Standard PCB Size/Mount | Strongly recommended    | :x:                |
+| FPC connector           | Required                | ✅                 |
+| Breakout pins           | Recommended             | ❌                 |
+| Uses: SPI               | Optional                | ✅                 |
+| SPI used for SPI only   | Strongly recommended    | ✅                 |
+| Uses: I2C               | Optional                | ✅                 |
+| I2C used for I2C only   | Strongly Recommended    | ✅                 |
+| I2C pull ups            | Required                | ❌                 |
+| Uses: RGB               | Optional                | ❌                 |
+| Uses: Extra GPIO 1      | Optional                | ✅                 |
+| Uses: Extra GPIO 2      | Optional                | ✅                 |
+| Standard PCB Size/Mount | Strongly recommended    | ❌                 |
 
-## PCB images
+### PCB images
 
 ![pcb front](images/ili9341v-module-front.png)
 
 ![pcb back](images/ili9341v-module-back.png)
 
-## Assembled image
+### Assembled image
 
 ![assembled](images/ili9341v-working-photo.jpg)
 
-## Product images
+### Product images
 
 ![pcb front](images/module-frontside.png)
 
 ![pcb back](images/module-backside.png)
 
-## Product Spec images
+### Product Spec images
 
 ![pcb front](images/design-specs.png)
 

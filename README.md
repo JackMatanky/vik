@@ -19,6 +19,7 @@ The main `LICENSE.md` in the git repository root directory applies to the whole 
 VIK is a standard for a data interface between printed circuit boards. It is intended to provide modularity between a mechanical keyboard pcb and additional features. The main pcb can have a controller and a switch matrix, while the modules can provide additional features.
 
 The standard specifies the following:
+
 1. The type of connector
 2. The signals mapped to each pin on the connector
 3. The type of cable
@@ -26,7 +27,7 @@ The standard specifies the following:
 5. Inclusion of the VIK logo on the PCB
 
 > **Note**  
-> Adding support for VIK is as simple as adding a symbol and footprint, provided in this repository, followed by some basic wiring. If you want to jump straight to the guide to do this using Kicad, go to [Implementation with Kicad](#implementation-with-kicad) 
+> Adding support for VIK is as simple as adding a symbol and footprint, provided in this repository, followed by some basic wiring. If you want to jump straight to the guide to do this using Kicad, go to [Implementation with Kicad](#implementation-with-kicad)
 
 ## Renders
 
@@ -85,18 +86,19 @@ The specs below state that you must invert the connector pin order between the k
 ### Interface
 
 The interface includes the following signals:
-* 3.3V
-* GND
-* SDA
-* SCL
-* RGB Data Out
-* 5V
-* Digital/Analog GPIO 1
-* MOSI
-* Digital/Analog GPIO 2
-* SPI CS
-* MISO
-* SCLK
+
+- 3.3V
+- GND
+- SDA
+- SCL
+- RGB Data Out
+- 5V
+- Digital/Analog GPIO 1
+- MOSI
+- Digital/Analog GPIO 2
+- SPI CS
+- MISO
+- SCLK
 
 The order specified above is the order they should be used on the FPC connector on the **keyboard side**, pins 1 through 12. For the module pcbs, they should be inverted, since the cable will automatically invert the order when connected. If you use the VIK Kicad symbols and footprints, this is managed for you. See the [Implementation with Kicad](#implementation-with-Kicad) section below
 
@@ -137,10 +139,12 @@ The mounting holes should 44.5mm apart in a square, centered around the center o
 ### Module mounting Kicad footprints
 
 There are two mounting footprints, found in the vik.pretty footprints folder:
-* vik-module-mounting-small
-* vik-module-mounting-large
+
+- vik-module-mounting-small
+- vik-module-mounting-large
 
 You can use these for one of two purposes:
+
 1) When creating a module, use the footprint to ensure that your module pcb has the correct mounting locations
 2) When creating a keyboard, use the footprint to position where you'd like to mount a module pcb
 
@@ -239,12 +243,12 @@ Microcontrollers usually have more than one set of I2C signals. On dev boards li
 
 This is the exact same as described for SDA, but using SCL instead
 
-
 **RGB Data Out**
 
 If you don't have RGB leds on your keyboard, this can be any digital GPIO. Just pick any data signal, and route it to the RGB pin on the VIK connector.
 
 If you are using RGB leds, you'll want to do two things:
+
 1. Wire the data out from the last LED to the RGB pin on the VIK connector
 2. Connect from the controller LED data pin to the VIK connector, but put an open jumper in the middle. The nice thing about this is that it allows the end user to still use the LED feature on a module without necessarily having the LEDs assembled on their keyboard.
 
@@ -289,7 +293,6 @@ No additional info beyond the `MOSI` section above. Same course of action, but f
 
 No additional info beyond the `MOSI` section above. Same course of action, but for the SCLK signal.
 
-
 ### Module schematic guide
 
 There aren't any major considerations for the schematic for the module. Everything on the connector is an input, so you can choose what to do with them.
@@ -321,6 +324,7 @@ If you are designing a keyboard pcb that uses a dev board as a controller (e.g. 
 **As described at the top of the README in the note, the keyboard pcb should run at at 3.3v logic levels. The simplest option is to use a RP2040 based development board. For integrated controllers, either use a controller that already runs at 3.3v logic, or level shift the GPIO before going into the VIK connector.**
 
 Some options include:
+
 1. Support only RP2040 based controllers (e.g. splinky, elite-pi, helios), where VCC is 3.3V, and the RAW pin provides 5V
 2. Support other 5V controllers, and use something like an LDO to convert 5V to 3.3V for the VIK 3.3V signal and GPIO signals
 3. Anything you want, as long as you can provide 5V and 3.3V (both power and 3.3v gpio logic levels)
@@ -335,15 +339,15 @@ In order to be VIK certified, you should be compliant with everything above, and
 
 #### Descriptions
 
-* **FPC connector:** has the correct FPC connector with the right pinout, and is wired to specificaton. See the connectors in the kicad/vik.pretty directory
-* **Breakout pins:** includes breakout pins using the [VIK breakout pin footprint](https://github.com/sadekbaroudi/vik/blob/master/kicad/vik.pretty/vik-keyboard-throughole.kicad_mod), or has through holes for all the signals. This allows easy access to all the signals. Also, the footprint is compatible with a [hand solderable FPC breakout board](https://www.amazon.com/uxcell-Converter-Couple-Extend-Adapter/dp/B07RVD1J1K).
-* **Supplies: SPI** supplies SPI signals, including MISO, MOSI, SCLK, and CS
-* **Supplies: I2C:** supplies I2C, including SDA and SCL
-* **I2C on main PCB:** Does the main PCB use any I2C already. Valid responses are `yes` or `no`. If this is true, the `I2C pull ups` field must have a value
-* **I2C pull ups:** I2C pull up resistor value, :x: if no pull ups on the main pcb, or resistor value if present
-* **Supplies: RGB:** supplies RGB data out
-* **Supplies: Extra GPIO 1:** supplies the extra GPIO, response will be one of: (**:x: | Digital Only | Analog/Digital**)
-* **Supplies: Extra GPIO 2:** supplies the extra GPIO, response will be one of: (**:x: | Digital Only | Analog/Digital**)
+- **FPC connector:** has the correct FPC connector with the right pinout, and is wired to specificaton. See the connectors in the kicad/vik.pretty directory
+- **Breakout pins:** includes breakout pins using the [VIK breakout pin footprint](https://github.com/sadekbaroudi/vik/blob/master/kicad/vik.pretty/vik-keyboard-throughole.kicad_mod), or has through holes for all the signals. This allows easy access to all the signals. Also, the footprint is compatible with a [hand solderable FPC breakout board](https://www.amazon.com/uxcell-Converter-Couple-Extend-Adapter/dp/B07RVD1J1K).
+- **Supplies: SPI** supplies SPI signals, including MISO, MOSI, SCLK, and CS
+- **Supplies: I2C:** supplies I2C, including SDA and SCL
+- **I2C on main PCB:** Does the main PCB use any I2C already. Valid responses are `yes` or `no`. If this is true, the `I2C pull ups` field must have a value
+- **I2C pull ups:** I2C pull up resistor value, :x: if no pull ups on the main pcb, or resistor value if present
+- **Supplies: RGB:** supplies RGB data out
+- **Supplies: Extra GPIO 1:** supplies the extra GPIO, response will be one of: (**:x: | Digital Only | Analog/Digital**)
+- **Supplies: Extra GPIO 2:** supplies the extra GPIO, response will be one of: (**:x: | Digital Only | Analog/Digital**)
 
 #### Keyboard sample cards
 
@@ -351,27 +355,27 @@ Example of a failing card:
 
 | Category                 | Classification          | Response           |
 | -----------------------  | ----------------------- | ------------------ |
-| FPC connector            | Required                | :heavy_check_mark: |
-| Breakout pins            | Recommended             | :x:                |
-| Supplies: SPI            | Required                | :heavy_check_mark: |
-| Supplies: I2C            | Required                | :heavy_check_mark: |
+| FPC connector            | Required                | ✅                 |
+| Breakout pins            | Recommended             | ❌                 |
+| Supplies: SPI            | Required                | ✅                 |
+| Supplies: I2C            | Required                | ✅                 |
 | I2C on main PCB          | Discouraged             | yes                |
 | I2C pull ups             | Informative             | 2.2kΩ              |
-| Supplies: RGB            | Required                | :x:                |
-| Supplies: Extra GPIO 1   | Required                | :x:                |
-| Supplies: Extra GPIO 2   | Required                | :x:                |
+| Supplies: RGB            | Required                | ❌                 |
+| Supplies: Extra GPIO 1   | Required                | ❌                 |
+| Supplies: Extra GPIO 2   | Required                | ❌                 |
 
 A "perfect" keyboard card would look like this:
 
 | Category                 | Classification          | Response           |
 | -----------------------  | ----------------------- | ------------------ |
-| FPC connector            | Required                | :heavy_check_mark: |
-| Breakout pins            | Recommended             | :heavy_check_mark: |
-| Supplies: SPI            | Required                | :heavy_check_mark: |
-| Supplies: I2C            | Required                | :heavy_check_mark: |
+| FPC connector            | Required                | ✅                 |
+| Breakout pins            | Recommended             | ✅                 |
+| Supplies: SPI            | Required                | ✅                 |
+| Supplies: I2C            | Required                | ✅                 |
 | I2C on main PCB          | Discouraged             | no                 |
 | I2C pull ups             | Informative             | N/A                |
-| Supplies: RGB            | Required                | :heavy_check_mark: |
+| Supplies: RGB            | Required                | ✅                 |
 | Supplies: Extra GPIO 1   | Required                | Analog/Digital     |
 | Supplies: Extra GPIO 2   | Required                | Analog/Digital     |
 
@@ -379,17 +383,17 @@ A "perfect" keyboard card would look like this:
 
 #### Descriptions
 
-* **FPC connector:** has the correct FPC connector with the right pinout, and is wired to specificaton. See the connectors in the kicad/vik.pretty directory
-* **Breakout pins:** includes breakout pins using the [VIK breakout pin footprint](https://github.com/sadekbaroudi/vik/blob/master/kicad/vik.pretty/vik-keyboard-throughole.kicad_mod), or has through holes for all the signals. This allows easy access to all the signals. Also, the footprint is compatible with a [hand solderable FPC breakout board](https://www.amazon.com/uxcell-Converter-Couple-Extend-Adapter/dp/B07RVD1J1K).
-* **Uses: SPI:** the module is utilizing SPI
-* **SPI used for SPI only:** if you are using any of the SPI gpio for any purpose other than SPI, this will remain unchecked. This means that keyboard pcbs that use SPI will be incompatible with this module.
-* **Uses: I2C:**
-* **I2C used for I2C only:** if you are using any of the I2C gpio for any purpose other than I2C, this will remain unchecked. This means that keyboard pcbs that use I2C will be incompatible with this module.
-* **I2C pull ups:** I2C pull up resistor value, if applicable. These are only required if I2C is being used on the module.
-* **Uses: RGB:** uses RGB data out
-* **Uses: Extra GPIO 1:** uses the extra GPIO, response will be one of: (**:x: | Digital Only | Analog/Digital**)
-* **Uses: Extra GPIO 2:** uses the extra GPIO, response will be one of: (**:x: | Digital Only | Analog/Digital**)
-* **Standard PCB Size/Mount:** adheres to standard module size and mounts, responses will be one of: (**:x: | Small | Large**)
+- **FPC connector:** has the correct FPC connector with the right pinout, and is wired to specificaton. See the connectors in the kicad/vik.pretty directory
+- **Breakout pins:** includes breakout pins using the [VIK breakout pin footprint](https://github.com/sadekbaroudi/vik/blob/master/kicad/vik.pretty/vik-keyboard-throughole.kicad_mod), or has through holes for all the signals. This allows easy access to all the signals. Also, the footprint is compatible with a [hand solderable FPC breakout board](https://www.amazon.com/uxcell-Converter-Couple-Extend-Adapter/dp/B07RVD1J1K).
+- **Uses: SPI:** the module is utilizing SPI
+- **SPI used for SPI only:** if you are using any of the SPI gpio for any purpose other than SPI, this will remain unchecked. This means that keyboard pcbs that use SPI will be incompatible with this module.
+- **Uses: I2C:**
+- **I2C used for I2C only:** if you are using any of the I2C gpio for any purpose other than I2C, this will remain unchecked. This means that keyboard pcbs that use I2C will be incompatible with this module.
+- **I2C pull ups:** I2C pull up resistor value, if applicable. These are only required if I2C is being used on the module.
+- **Uses: RGB:** uses RGB data out
+- **Uses: Extra GPIO 1:** uses the extra GPIO, response will be one of: (**:x: | Digital Only | Analog/Digital**)
+- **Uses: Extra GPIO 2:** uses the extra GPIO, response will be one of: (**:x: | Digital Only | Analog/Digital**)
+- **Standard PCB Size/Mount:** adheres to standard module size and mounts, responses will be one of: (**:x: | Small | Large**)
 
 #### Module sample card
 
@@ -397,16 +401,16 @@ General example:
 
 | Category                | Classification          | Response           |
 | ----------------------- | ----------------------- | ------------------ |
-| FPC connector           | Required                | :heavy_check_mark: |
-| Breakout pins           | Recommended             | :x:                |
-| Uses: SPI               | Optional                | :heavy_check_mark: |
-| SPI used for SPI only   | Strongly recommended    | :heavy_check_mark: |
-| Uses: I2C               | Optional                | :heavy_check_mark: |
-| I2C used for I2C only   | Strongly Recommended    | :heavy_check_mark: |
+| FPC connector           | Required                | ✅                 |
+| Breakout pins           | Recommended             | ❌                 |
+| Uses: SPI               | Optional                | ✅                 |
+| SPI used for SPI only   | Strongly recommended    | ✅                 |
+| Uses: I2C               | Optional                | ✅                 |
+| I2C used for I2C only   | Strongly Recommended    | ✅                 |
 | I2C pull ups            | Required                | 4.7kΩ              |
-| Uses: RGB               | Optional                | :x:                |
-| Uses: Extra GPIO 1      | Optional                | :x:                |
-| Uses: Extra GPIO 2      | Optional                | :x:                |
+| Uses: RGB               | Optional                | ❌                 |
+| Uses: Extra GPIO 1      | Optional                | ❌                 |
+| Uses: Extra GPIO 2      | Optional                | ❌                 |
 | Standard PCB Size/Mount | Strongly recommended    | Large              |
 
 ## Known list of VIK certifications
@@ -468,4 +472,3 @@ General example:
 | [peacock trackpad](https://github.com/george-norton/peacock)                                       | Large trackpad module                                | Complete                            | Open source                  | [George Norton](https://github.com/george-norton)   |
 | [procyon trackpad](https://github.com/george-norton/procyon)                                       | multi touch trackpad module                          | Complete                            | Open source                  | [George Norton](https://github.com/george-norton)   |
 | [vik-splitter](https://github.com/sadekbaroudi/vik/tree/master/pcb/vik-splitter/)                  | module to split one vik in connector to two vik outs | Untested                            | Open source                  | [Sadek Baroudi](https://github.com/sadekbaroudi/)   |
-

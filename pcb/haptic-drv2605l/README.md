@@ -26,23 +26,23 @@ For PCB fabrication, you can use the files in the production folder.
 
 | Category                | Classification       | Response             |
 | ----------------------- | -------------------- | -------------------- |
-| FPC connector           | Required             | :heavy_check_mark:   |
-| Breakout pins           | Recommended          | :x:                  |
-| Uses: SPI               | Optional             | :x:                  |
+| FPC connector           | Required             | ✅                   |
+| Breakout pins           | Recommended          | ❌                   |
+| Uses: SPI               | Optional             | ❌                   |
 | SPI used for SPI only   | Strongly recommended | N/A                  |
-| Uses: I2C               | Optional             | :heavy_check_mark:   |
-| I2C used for I2C only   | Strongly Recommended | :heavy_check_mark:   |
+| Uses: I2C               | Optional             | ✅                   |
+| I2C used for I2C only   | Strongly Recommended | ✅                   |
 | I2C pull ups            | Required             | 4.7kΩ <sup>[1]</sup> |
-| Uses: RGB               | Optional             | :x:                  |
-| Uses: Extra GPIO 1      | Optional             | :x:                  |
-| Uses: Extra GPIO 2      | Optional             | :x:                  |
+| Uses: RGB               | Optional             | ❌                   |
+| Uses: Extra GPIO 1      | Optional             | ❌                   |
+| Uses: Extra GPIO 2      | Optional             | ❌                   |
 | Standard PCB Size/Mount | Strongly recommended | Small                |
 
 **[1]**: I2C pull ups can be enabled/disabled with solder jumpers
 
 ## Images
 
-#### Renders
+### Renders
 
 ![pcb front](images/haptic-drv2605l-module-front.png)
 

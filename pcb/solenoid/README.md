@@ -10,9 +10,9 @@ This is a VIK module by [sadekbaroudi](https://github.com/sadekbaroudi) to add a
 
 For PCB fabrication, you can use the files in the production folder.
 
-* gerbers.zip - the file used to fabricate the pcb
-* bom.csv - used for PCBA. You can also use the part numbers in this file to look up the exact parts as [lcsc.com](https://lcsc.com)
-* positions.csv - used for PCBA
+- gerbers.zip - the file used to fabricate the pcb
+- bom.csv - used for PCBA. You can also use the part numbers in this file to look up the exact parts as [lcsc.com](https://lcsc.com)
+- positions.csv - used for PCBA
 
 Using the 3 files above, this has been tested at [jlcpcb.com](https://jlcpcb.com)
 
@@ -20,24 +20,24 @@ For the parts not listed in the bom, you'll need the following:
 
 | Quantity | Part name / number                                                | Example URL for purchase                                            |
 | -------- | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
-| 1        | TIP120 - NPN Transistor                                           | https://www.aliexpress.us/item/2251832720365467.html                |
-| 1        | 2.2K Ohm resistor                                                 | https://www.aliexpress.us/item/3256802900888178.html                |
-| 1        | 1N4001 Rectifier Diode                                            | https://www.aliexpress.us/item/3256805759330925.html                |
+| 1        | TIP120 - NPN Transistor                                           | <https://www.aliexpress.us/item/2251832720365467.html>                |
+| 1        | 2.2K Ohm resistor                                                 | <https://www.aliexpress.us/item/3256802900888178.html>                |
+| 1        | 1N4001 Rectifier Diode                                            | <https://www.aliexpress.us/item/3256805759330925.html>                |
 
 ### VIK module certification (sadek version)
 
 | Category                | Classification          | Response           |
 | ----------------------- | ----------------------- | ------------------ |
-| FPC connector           | Required                | :heavy_check_mark: |
-| Breakout pins           | Recommended             | :x:                |
-| Uses: SPI               | Optional                | :x:                |
-| SPI used for SPI only   | Strongly recommended    | :x:                |
-| Uses: I2C               | Optional                | :x:                |
-| I2C used for I2C only   | Strongly Recommended    | :x:                |
-| I2C pull ups            | Required                | :x:                |
-| Uses: RGB               | Optional                | :x:                |
-| Uses: Extra GPIO 1      | Optional                | :heavy_check_mark: |
-| Uses: Extra GPIO 2      | Optional                | :x:                |
+| FPC connector           | Required                | ✅                 |
+| Breakout pins           | Recommended             | ❌                 |
+| Uses: SPI               | Optional                | ❌                 |
+| SPI used for SPI only   | Strongly recommended    | ❌                 |
+| Uses: I2C               | Optional                | ❌                 |
+| I2C used for I2C only   | Strongly Recommended    | ❌                 |
+| I2C pull ups            | Required                | ❌                 |
+| Uses: RGB               | Optional                | ❌                 |
+| Uses: Extra GPIO 1      | Optional                | ✅                 |
+| Uses: Extra GPIO 2      | Optional                | ❌                 |
 | Standard PCB Size/Mount | Strongly recommended    | Small              |
 
 ## PCB images (sadek version)
@@ -62,16 +62,16 @@ Note that as of this writing, there is also a VIK xs (extra small) version in th
 
 | Category                | Classification          | Response           |
 | ----------------------- | ----------------------- | ------------------ |
-| FPC connector           | Required                | :heavy_check_mark: |
-| Breakout pins           | Recommended             | :x:                |
-| Uses: SPI               | Optional                | :x:                |
-| SPI used for SPI only   | Strongly recommended    | :x:                |
-| Uses: I2C               | Optional                | :x:                |
-| I2C used for I2C only   | Strongly Recommended    | :x:                |
-| I2C pull ups            | Required                | :x:                |
-| Uses: RGB               | Optional                | :x:                |
-| Uses: Extra GPIO 1      | Optional                | :heavy_check_mark: |
-| Uses: Extra GPIO 2      | Optional                | :x:                |
+| FPC connector           | Required                | ✅                 |
+| Breakout pins           | Recommended             | ❌                 |
+| Uses: SPI               | Optional                | ❌                 |
+| SPI used for SPI only   | Strongly recommended    | ❌                 |
+| Uses: I2C               | Optional                | ❌                 |
+| I2C used for I2C only   | Strongly Recommended    | ❌                 |
+| I2C pull ups            | Required                | ❌                 |
+| Uses: RGB               | Optional                | ❌                 |
+| Uses: Extra GPIO 1      | Optional                | ✅                 |
+| Uses: Extra GPIO 2      | Optional                | ❌                 |
 | Standard PCB Size/Mount | Strongly recommended    | Small/XS           |
 
 ### PCB images (aleblazer version)
